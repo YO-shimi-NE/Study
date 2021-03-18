@@ -3,6 +3,7 @@
 - [x] - Chapter 1
 - [ ] - Chapter 2
     - [ ] - Pattern Matching
-- [ ] - Chapter 3
+- [X] - Chapter 3
+    - [X] - Immutability
 - [ ] - Chapter 4
 - [ ] - Chapter 5
