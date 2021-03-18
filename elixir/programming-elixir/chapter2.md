@@ -23,3 +23,11 @@ nestedList = [1, 2, [1,2,3]]
 # z=[1,2,3]
 [1, _, 3] = [1, 10, 3]
 ```
+
+Uma vez feito o match, o elixir, pode reatribuir um novo match a um literal desde que ele nao participe da operacao
+```
+[a, a] = [1, 1] #True
+[a,a] = [1, 2] #False, os valores atribuidos sao diferentes
+a = 3 #True pois o literal nao participa do lado direito
+```
+Caso nao deseje que o elixir faca um novo bind ao literal pode-se usar o _pin-operator_ _^_ esse operador nao deixa o elixir fazer um novo bind caso ja exista um.
