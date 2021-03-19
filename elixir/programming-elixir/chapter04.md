@@ -35,13 +35,39 @@ podendo ser utilizado da seguinte form
 >[nome: "valor", nome: "valor", nome: "valor"]
 _Se o a keyword list for o ultimo parametro da fn pode-se omitir as []_
 
+### Maps
+Colecao de pares _key/value_
+> %{ key => value, key => value }
+_se a chave for um atom pode utiliza a mesma tecnica da keyword list_
+> %{ key: value, key: value }
+Os valores podem ser acessados utilizando _map[key]_
+Case a key seja um atom pode ser acessado _map.key_
+
+### Binaries
+```<<n , n, n>>``` O elixir usa a estrutura binaria para representar _UTF_ strings.
+
+
+### Ordem de comparacao
+> number < atom < reference < function < port < pid < tuple < map < list < binary
+---
+_As declaracoes possuem escopo lexico_
+### With
+O ```with``` permite criar um escopo local
+```elixir
+word =  with    .... # a primeira expressao deve estar na mesma linha do with ou _whth ( ..... )_, para nao ser interpretado como um macro ou funcao
+                ....
+        end
+```
+
+Caso o with tente fazer um bind e falhe e retornado um erro, entretanto, pode se usar o operador ```<-``` que retorna o valor que nao foi possivel fazer o binding.
+---
 [^1]: Inteiros podem ser escritos com decimais, hexadecimais ```0xcafe```, octal ```0o123``` e binario ```0b10101```.
 
 > Decimais podem conter ```_``` e frequentemente utilizado para separar grupos de milhares.
 
 [^2]: Pode-se utilizar a notacao exponencial para representar os floats
 
-[^3]: Atoms sao constantes que representam o proprio nome, sua declaracao e iniciada com ```:```, apos os : pode conter letras (UTF-8) ou sinais de operadores, sinais, numeros, @, _ pode ser finalizada com ```. ! ?```. Podem ser inseridas entre aspas.
+[^3]: Atoms sao constantes que representam o proprio nome, sua declaracao e iniciada com ```:```, apos os : pode conter letras _UTF-8_ ou sinais de operadores, sinais, numeros, @, _ pode ser finalizada com ```. ! ?```. Podem ser inseridas entre aspas.
 
 [^4]: Ranges sao representados por ```inicio..fim```
 
