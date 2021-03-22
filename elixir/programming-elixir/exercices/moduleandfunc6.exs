@@ -25,17 +25,21 @@
 
 
 defmodule Chop do
-  def guess(actual, _..max) when div(max, 2) === actual do
+  def guess(actual, min..max) when div(min+max, 2) === actual do
+    IO.puts("Is it 1 #{actual}_#{min}_#{max}")
     actual
   end
 
-  def guess(actual, min..max) when div(max, 2) > actual do
-    IO.puts("Is it #{actual}")
+  def guess(actual, min..max) when div(min+max, 2) > actual do
+    IO.puts("Is it 2 #{actual}_#{min}_#{max}")
     guess(actual, min..div(max, 2))
   end
 
-  def guess(actual, _..max) when div(max, 2) < actual do
-    IO.puts("Is it #{actual}")
-    guess(actual, div(max, 2)..max)
+  def guess(actual, min..max) when div(min+max, 2) < actual do
+    IO.puts("Is it 3 #{actual}_#{min}_#{max}")
+    guess(actual, (div(min+max, 2) + 1)..max)
   end
 end
+
+#Chop.guess(4, 1..20)
+#Chop.guess(273, 1..1000)
