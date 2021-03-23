@@ -32,12 +32,12 @@ defmodule Chop do
 
   def guess(actual, min..max) when div(min+max, 2) > actual do
     IO.puts("Is it 2 #{actual}_#{min}_#{max}")
-    guess(actual, min..div(max, 2))
+    guess(actual, min..div(min+max, 2))
   end
 
   def guess(actual, min..max) when div(min+max, 2) < actual do
     IO.puts("Is it 3 #{actual}_#{min}_#{max}")
-    guess(actual, (div(min+max, 2) + 1)..max)
+    guess(actual, (div(min+max, 2))..max)
   end
 end
 

@@ -123,3 +123,15 @@ pode-ser
 Usado quando se deseja usar os macros definidos no modulo.
 
 
+
+# Module Attributes
+Atributos de modulos sao metadados associados ao modulo
+```@attribuete_name value``` cria um atributo 
+```@``` acessa o valor do tributo
+
+Os atributos devem ser declarados no topo do modulo, nao sendo possivel crialos dentro de funcoes, mas pode acessa-los
+Se um atributo com o mesmo nome for declarados em diferentes partes e chamado por diversas funcoes assumira o valor da ultima declaracao antes da chamada da funcao, de cima para baixo
+ 
+---
+Quando um modulo e declarado o nome do modulo sera convertido para um atom com o prefixo ```Elixir``` 
+> IO.puts -> "Elixir.IO".puts
