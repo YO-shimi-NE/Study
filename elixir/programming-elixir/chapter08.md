@@ -21,7 +21,7 @@ iex(2)> model = Model.instance(:base, :string)
 %Model{field: :base, type: :string}
 iex(3)> model
 %Model{field: :base, type: :string}
-iex(4)> model = %{model | field: :name}[^1]
+iex(4)> model = %{model | field: :name} ```[^1]```
 %Model{field: :name, type: :string}
 iex(5)> model
 %Model{field: :name, type: :string}
