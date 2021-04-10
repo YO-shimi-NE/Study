@@ -6,4 +6,4 @@
 - [X] - Chapter 3
     - [X] - Immutability
 - [ ] - Chapter 4
-- [ ] - Chapter 5
+- [x] - Chapter 5
